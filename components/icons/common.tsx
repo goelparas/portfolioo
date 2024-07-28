@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SquareMenuIcon } from "lucide-react";
 import { IconType } from "react-icons";
 import { FaHamburger } from "react-icons/fa";
 
@@ -30,4 +31,4 @@ export function IconComponent(Icon: React.ComponentType<IconProps>) {
   return WrappedIcon;
 }
 
-export const Hamburger = IconComponent(FaHamburger);
+export const Hamburger = IconComponent(SquareMenuIcon as IconType);

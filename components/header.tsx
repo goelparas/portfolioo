@@ -9,6 +9,7 @@ import { ScreenSize } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/lib/hooks/useScroll";
 import { Hamburger } from "./icons/common";
+import Image from "next/image";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -34,7 +35,7 @@ export default function Header() {
               {windowSize.width &&
                 (windowSize.width < ScreenSize.MOBILE ? (
                   <div className=" flex justify-between items-center w-full">
-                    <p>Paras Goel</p>
+                    <Image src={'https://readyplayer.me/gallery/66a630a5553871e7cab1284e-JSYznGjpeg'} alt="icon-avatar" width={30} height={30}/>
                     <Hamburger />
                   </div>
                 ) : (
