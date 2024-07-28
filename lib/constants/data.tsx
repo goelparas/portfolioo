@@ -6,6 +6,18 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import { motion } from "framer-motion";
+import {
+  CSSIcon,
+  HTMLIcon,
+  JSIcon,
+  NextIcon,
+  ReactIcon,
+  ReactQueryIcon,
+  ReduxIcon,
+  TailwindIcon,
+  TypeScriptIcon,
+  WebpackIcon,
+} from "../icons";
 
 export const links = [
   {
@@ -86,25 +98,31 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  {
+    name: "innerCircle",
+    skills: [
+      { skillName: "HTML", skillIcon: <HTMLIcon /> },
+      { skillName: "CSS", skillIcon: <CSSIcon /> },
+      { skillName: "Javascript", skillIcon: <JSIcon /> },
+    ],
+  },
+  {
+    name: "outerCircle",
+    skills: [
+      { skillName: "React", skillIcon: <ReactIcon /> },
+      { skillName: "Redux", skillIcon: <ReduxIcon /> },
+      { skillName: "Next.js", skillIcon: <NextIcon /> },
+    ],
+  },
+  {
+    name: "outmostCircle",
+    skills: [
+      { skillName: "Typescipt", skillIcon: <TypeScriptIcon /> },
+      { skillName: "Tailwind", skillIcon: <TailwindIcon /> },
+      { skillName: "React Query", skillIcon: <ReactQueryIcon /> },
+      { skillName: "Webpack", skillIcon: <WebpackIcon /> },
+    ],
+  },
 ] as const;
 
 export const introData = (
@@ -120,5 +138,3 @@ export const introData = (
     <span className="underline">React (Next.js)</span>.
   </motion.h1>
 );
-
-
