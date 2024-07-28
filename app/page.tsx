@@ -5,17 +5,18 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import {useScroll} from "@/lib/hooks/useScroll";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
-      {/* <Intro /> */}
-      {/* <SectionDivider />
+      <Intro /> 
+    <SectionDivider />
       <About />
       <Projects />
       <Skills />
       <Experience />
-      <Contact /> */}
+      <Contact />
     </main>
   );
 }
