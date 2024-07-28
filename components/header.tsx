@@ -1,15 +1,15 @@
 "use client";
-
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion/";
+import { AnimatePresence, motion } from "framer-motion";
 import { links } from "@/lib/constants/data";
 import Link from "next/link";
-import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import { ScreenSize } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/lib/hooks/useScroll";
+import { Hamburger } from "./icons/common";
+
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
@@ -26,16 +26,16 @@ export default function Header() {
           )}
         >
           <motion.div
-            className=" relative w-[90%]  py-2   border border-white mx-auto border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]    sm:w-[36rem] rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+            className=" relative w-[90%]  py-1   border border-white mx-auto border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.06] backdrop-blur-[0.5rem]    sm:w-[36rem] rounded-2xl dark:bg-gray-950 dark:border-black/30 dark:bg-opacity-50"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <nav className="flex h-12 items-center justify-center  relative  py-0 w-full px-8 overflow-hidden">
+            <nav className="flex h-12 items-center justify-center  relative  py-0 w-full px-4 overflow-hidden">
               {windowSize.width &&
                 (windowSize.width < ScreenSize.MOBILE ? (
                   <div className=" flex justify-between items-center w-full">
                     <p>Paras Goel</p>
-                    <div> Drop Down</div>
+                    <Hamburger />
                   </div>
                 ) : (
                   <ul className="flex  flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
