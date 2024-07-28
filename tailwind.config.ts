@@ -19,7 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        custom: ["var(--font-circular)", "sans-serif"],
+        circular: ["var(--font-circular)", "sans-serif"],
+        markpro: ["var(--font-mark-pro)", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
