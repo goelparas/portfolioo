@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
@@ -13,7 +12,7 @@ const circular = localFont({
   variable: "--font-circular",
 });
 
-const markPro = localFont({
+const markPro  =localFont({
   src: [
     {
       path: "../public/fonts/mark-pro.ttf",
@@ -26,6 +25,19 @@ const markPro = localFont({
   ],
   variable: "--font-mark-pro",
 });
+const condensed = localFont({
+  src: [
+    {
+      path: "../public/fonts/condensed.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/condensed-bold.ttf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-condensed",
+})
 
 export const metadata = {
   title: "Ricardo | Personal Portfolio",
@@ -41,22 +53,21 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          ` bg-gray-50 text-gray-950 relative   dark:bg-gray-900 dark:text-[#ffd3ba] dark:text-opacity-90`,
-          circular.className,
-          markPro.className
+          ` bg-gray-50 text-gray-950 relative   dark:bg-gray-900 dark:text-white dark:text-opacity-90`,
+          circular.className , 
+          markPro.variable,
+          condensed.variable
         )}
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263] "></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+        <div className="bg-orange absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
+        <div className="bg-darkpurple absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] "></div>
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
             <Footer />
-
             <Toaster position="top-right" />
-            <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
