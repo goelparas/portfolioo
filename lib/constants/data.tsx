@@ -109,18 +109,39 @@ export const skillsData = [
   {
     name: "outerCircle",
     skills: [
-      { skillName: "React", skillIcon: <ReactIcon /> },
-      { skillName: "Redux", skillIcon: <ReduxIcon /> },
-      { skillName: "Next.js", skillIcon: <NextIcon /> },
+      {
+        skillName: "React",
+        skillIcon: <ReactIcon className="w-10 h-10 lg:w-12 lg:h-12" />,
+      },
+      {
+        skillName: "Redux",
+        skillIcon: <ReduxIcon className="w-10 h-10 lg:w-12 lg:h-12" />,
+      },
+      {
+        skillName: "Next.js",
+        skillIcon: <NextIcon className="w-10 h-10 lg:w-12 lg:h-12" />,
+      },
     ],
   },
   {
     name: "outmostCircle",
     skills: [
-      { skillName: "Typescipt", skillIcon: <TypeScriptIcon /> },
-      { skillName: "Tailwind", skillIcon: <TailwindIcon /> },
-      { skillName: "React Query", skillIcon: <ReactQueryIcon /> },
-      { skillName: "Webpack", skillIcon: <WebpackIcon /> },
+      {
+        skillName: "Typescipt",
+        skillIcon: <TypeScriptIcon className="w-11 h-11 lg:w-16 lg:h-16" />,
+      },
+      {
+        skillName: "Tailwind",
+        skillIcon: <TailwindIcon className="w-16 h-16 lg:w-20 lg:h-20" />,
+      },
+      {
+        skillName: "React Query",
+        skillIcon: <ReactQueryIcon className="w-16 h-16 lg:w-20 lg:h-20" />,
+      },
+      {
+        skillName: "Webpack",
+        skillIcon: <WebpackIcon className="w-14 h-14 lg:w-20 lg:h-20" />,
+      },
     ],
   },
 ] as const;

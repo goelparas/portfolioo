@@ -2,57 +2,80 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { experiencesData } from "@/lib/constants/data";
+import TinderCard from "react-tinder-card";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
+import { cn } from "@/lib/utils";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
+
+  const onSwipe = (direction: any) => {
+    console.log("You swiped: " + direction);
+  };
+
+  const onCardLeftScreen = (myIdentifier: any) => {
+    console.log(myIdentifier + " left the screen");
+  };
+
+  const tinderCards = [
+    {
+      title: "Backend-End Developer",
+      location: "Orlando, FL",
+      description: "Worked on the Google Search Engine",
+      color: "bg-green-500",
+    },
+    {
+      title: "Software Engineer",
+      location: "Google",
+      description: "Worked on the Google Search Engine",
+      color: "bg-red-500",
+    },
+    {
+      title: "Front-End Developer",
+      location: "Orlando, FL",
+      description: "Worked on the Google Search Engine",
+      color: "bg-blue-500",
+    },
+  ];
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    <section id="experience" ref={ref} className="w-full sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
-                fontSize: "1.5rem",
-              }}
+      <div className="w-full flex flex-col justify-center items-center h-[100vh]">
+        <div className="w-[300px] h-[450px] lg:w-[400px] lg:h-[550px] relative">
+          {tinderCards.map((card, index) => (
+            <TinderCard
+              key={index}
+              onSwipe={onSwipe}
+              onCardLeftScreen={() => onCardLeftScreen("fooBar")}
+              preventSwipe={["up", "down"]}
+              className="absolute"
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
+              <div
+                className={cn(
+                  "w-[300px] h-[450px] lg:w-[400px] lg:h-[550px] shadow-lg text-black select-none bg-cover bg-center rounded-3xl hover:-translate-y-12 transition-transform duration-300 ease-in-out",
+                  card.color,
+                  {
+                    "rotate-[-4deg]": index === 0,
+                    "rotate-[4deg]": index === 1,
+                  }
+                )}
+                style={{
+                  transformOrigin: "center 200%",
+                }}
+              >
+                <div className="p-4">
+                  <h3 className="font-semibold capitalize">{card.title}</h3>
+                  <p className="font-normal !mt-0">{card.location}</p>
+                  <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            </TinderCard>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
