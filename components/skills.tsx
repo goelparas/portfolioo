@@ -28,7 +28,8 @@ export default function Skills() {
       id="skills"
       ref={ref}
       className="lg:h-[100dvh] mb-3 sm:mb-8 w-full"
-    >
+    > 
+    <SectionHeading> Skills</SectionHeading>
       <SkillCircle />
     </section>
   );

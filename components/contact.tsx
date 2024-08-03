@@ -7,6 +7,8 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import { INFORMATION } from "@/lib/constants/data";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -29,46 +31,54 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
-
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
-        </a>{" "}
-        or through this form.
-      </p>
-
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
-      >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+      <div className="h-dvh w-full flex flex-col items-center justify-between">
+        <div />
+        <div />
+        <div className="flex flex-col gap-6">
+          <div className="mb-28 flex flex-col gap-5">
+            <p className="animate-gradient-text text-[30px] font-markpro bg-gradient-to-r to-orange font-extrabold from-purple bg-clip-text text-transparent text-left">
+              Sold yet?
+            </p>
+            <p className="text-foreground/80 text-left text-2xl font-circular">
+              {INFORMATION.CONTACT.MESSAGE}
+            </p>
+          </div>
+          <div className="flex flex-col text-left gap-2">
+            <p className="animate-gradient-text text-[25px] font-markpro bg-gradient-to-r to-orange font-extrabold from-purple bg-clip-text text-transparent text-left">
+              Dont be a stranger!
+            </p>
+            <p className="text-sm text-foreground font-circular text-left mb-4">
+              Connect with me online
+            </p>
+            <div className="w-full flex items-center justify-start gap-8 text-foreground ">
+              <Link
+                className="font-condensed text-xs"
+                href={INFORMATION.CONTACT.SOCIALS.github}
+              >
+                👾 GITHUB
+              </Link>
+              <Link
+                className="font-condensed text-xs"
+                href={INFORMATION.CONTACT.SOCIALS.twitter}
+              >
+                🐦 TWITTER
+              </Link>
+              <Link
+                className="font-condensed text-xs"
+                href={INFORMATION.CONTACT.SOCIALS.linkedin}
+              >
+                💼 LINKEDIN
+              </Link>
+              <Link
+                className="font-condensed text-xs"
+                href={INFORMATION.CONTACT.SOCIALS.leetcode}
+              >
+                👾 LEETCODE
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.section>
   );
 }

@@ -24,6 +24,7 @@ export default function Project({
   return (
     <motion.div
       ref={ref}
+      id="projects"
       style={{
         scale: scaleProgess,
         opacity: opacityProgess,

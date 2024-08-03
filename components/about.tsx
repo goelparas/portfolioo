@@ -25,7 +25,7 @@ export default function About() {
             turning idea into real life{" "}
             <span className="animate-gradient-text bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent">
               product
-            </span>{" "}
+            </span> 
             is my calling .
           </h1>
           <p className="font-condensed text-left">

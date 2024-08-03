@@ -18,6 +18,7 @@ import {
   TypeScriptIcon,
   WebpackIcon,
 } from "../icons";
+import Link from "next/link";
 
 export const links = [
   {
@@ -146,16 +147,21 @@ export const skillsData = [
   },
 ] as const;
 
-export const introData = (
-  <motion.h1
-    className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-  >
-    <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
-    <span className="font-bold">full-stack developer</span> with{" "}
-    <span className="font-bold">8 years</span> of experience. I enjoy building{" "}
-    <span className="italic">sites & apps</span>. My focus is{" "}
-    <span className="underline">React (Next.js)</span>.
-  </motion.h1>
-);
+export const INFORMATION = {
+  CONTACT: {
+    MESSAGE: (
+      <>
+        Thanks for stopping by, I’m currently looking to join a new team of
+        creative designers and developers. If you think we might be a good fit
+        for one another, send me an{" "}
+        <Link className="font-extrabold text-foreground" href={'mailto:goelparas.work@gmail.com'}>email</Link> &#128231;.
+      </>
+    ),
+    SOCIALS :{
+      github: "https://www.github.com/goelparas",
+      twitter: "https://www.twitter.com/goelparas",
+      linkedin: "https://www.linkedin.com/in/goelparas",
+      leetcode: "https://www.leetcode.com/goelparas",
+    }
+  },
+};

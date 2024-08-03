@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import OrbitingCircles from "@/components/ui/orbiting-circle";
 import { skillsData } from "@/lib/constants/data";
@@ -5,17 +6,21 @@ import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import { motion } from "framer-motion";
 export function SkillCircle() {
   const windowSize = useWindowSize();
+  const [isClient, setisClient] = useState(false);
   const [circleConfigs, setCircleConfigs] = useState(
-    getCircleConfigs( (window &&  window.innerWidth) ?? 0)
+    getCircleConfigs(isClient ? window.innerWidth : 0)
   );
 
   useEffect(() => {
+    if (window) {
+      setisClient(true);
+    }
     const circleConfigs = getCircleConfigs(windowSize?.width!);
     setCircleConfigs(circleConfigs);
   }, [windowSize]);
 
-  function getCircleConfigs(width: number|undefined) {
-    if(!width) return 
+  function getCircleConfigs(width: number | undefined) {
+    if (!width) return;
     if (width < 640) {
       return {
         innerCircle: { radius: 45, size: 50, duration: 20, reverse: false },
@@ -38,13 +43,15 @@ export function SkillCircle() {
   }
 
   return (
-    <motion.div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+    <motion.div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg" 
+      
+    >
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-orange to-gray-300 bg-clip-text text-center lg:text-8xl text-[50px] font-semibold leading-none text-transparent dark:from-white dark:to-orange">
         Skills
       </span>
 
       {skillsData.map(({ name, skills }) => {
-        const config = circleConfigs && circleConfigs[name] || undefined;
+        const config = (circleConfigs && circleConfigs[name]) || undefined;
         if (!config) return null;
         return skills.map((skill, index) => (
           <OrbitingCircles
