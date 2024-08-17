@@ -8,6 +8,7 @@ import { useSectionInView } from "@/lib/hooks";
 
 import Link from "next/link";
 import { INFORMATION } from "@/lib/constants/data";
+import Socials from "./socials";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -49,32 +50,7 @@ export default function Contact() {
             <p className="text-sm text-foreground font-circular text-left mb-4">
               Connect with me online
             </p>
-            <div className="w-full flex items-center justify-start gap-8 text-foreground ">
-              <Link
-                className="font-condensed text-xs"
-                href={INFORMATION.CONTACT.SOCIALS.github}
-              >
-                👾 GITHUB
-              </Link>
-              <Link
-                className="font-condensed text-xs"
-                href={INFORMATION.CONTACT.SOCIALS.twitter}
-              >
-                🐦 TWITTER
-              </Link>
-              <Link
-                className="font-condensed text-xs"
-                href={INFORMATION.CONTACT.SOCIALS.linkedin}
-              >
-                💼 LINKEDIN
-              </Link>
-              <Link
-                className="font-condensed text-xs"
-                href={INFORMATION.CONTACT.SOCIALS.leetcode}
-              >
-                👾 LEETCODE
-              </Link>
-            </div>
+            <Socials/>
           </div>
         </div>
       </div>

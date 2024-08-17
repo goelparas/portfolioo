@@ -6,13 +6,15 @@ import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-
+import Lottie from "react-lottie-player/dist/LottiePlayerLight";
+import hello from "@/components/animation/hello.json";
+import { Suspense } from "react";
 const circular = localFont({
   src: "../public/fonts/circular-std.ttf",
   variable: "--font-circular",
 });
 
-const markPro  =localFont({
+const markPro = localFont({
   src: [
     {
       path: "../public/fonts/mark-pro.ttf",
@@ -37,7 +39,7 @@ const condensed = localFont({
     },
   ],
   variable: "--font-condensed",
-})
+});
 
 export const metadata = {
   title: "Ricardo | Personal Portfolio",
@@ -53,23 +55,25 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          ` bg-gray-50 text-gray-950 relative   dark:bg-gray-900 dark:text-white dark:text-opacity-90`,
-          circular.className , 
+          `relative  bg-gray-900 text-white text-opacity-90 lg:px-[20%]`,
+          circular.className,
           markPro.variable,
           condensed.variable
         )}
       >
-        <div className="bg-orange absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
-        <div className="bg-darkpurple absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] "></div>
+        <div className="bg-black absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
+        <div className="bg-black absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] "></div>
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
+           
             {children}
             <Footer />
             <Toaster position="top-right" />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
+
       </body>
     </html>
   );

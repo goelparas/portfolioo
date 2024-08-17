@@ -10,7 +10,7 @@ export default function Experience() {
   const { ref } = useSectionInView("Projects", 0.5);
 
   return (
-    <section ref={ref} id="experience" className=" mb-28">
+    <section ref={ref} id="experience" className="mb-28">
       <SectionHeading>Experience</SectionHeading>
       <div>
         {projectsData.map((project, index) => (
