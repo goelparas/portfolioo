@@ -22,10 +22,6 @@ import Link from "next/link";
 
 export const links = [
   {
-    name: "Home",
-    hash: "#home",
-  },
-  {
     name: "About",
     hash: "#about",
   },

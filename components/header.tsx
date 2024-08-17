@@ -23,19 +23,26 @@ export default function Header() {
       {!isScrolling && (
         <motion.header
           className={cn(
-            `z-50 w-full  h-fit fixed  items-center justify-center flex flex-col py-8 px-8`
+            `z-50 w-full  h-fit fixed  top-8  left-0  flex items-center justify-center`
           )}
         >
           <motion.div
-            className=" relative w-[90%]  py-1   border border-white mx-auto border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.06] backdrop-blur-[0.5rem]    sm:w-[36rem] rounded-2xl dark:bg-gray-950 dark:border-black/30 dark:bg-opacity-50"
+            className=" relative  h-16   py-1  lg:w-fit shadow-lg shadow-black/[0.06] backdrop-blur-[0.5rem] w-4/5   sm:w-[36rem]   rounded-xl dark:bg-slate-800 dark:border-black/30 dark:bg-opacity-50"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <nav className="flex h-12 items-center justify-center  relative  py-0 w-full px-4 overflow-hidden">
+            <nav className="flex h-full items-center justify-center  relative  py-0  px-4 overflow-hidden">
               {windowSize.width &&
                 (windowSize.width < ScreenSize.MOBILE ? (
                   <div className=" flex justify-between items-center w-full">
-                    <Image src={'https://readyplayer.me/gallery/66a630a5553871e7cab1284e-JSYznGjpeg'} alt="icon-avatar" width={30} height={30}/>
+                    <Image
+                      src={
+                        "https://readyplayer.me/gallery/66a630a5553871e7cab1284e-JSYznGjpeg"
+                      }
+                      alt="icon-avatar"
+                      width={30}
+                      height={30}
+                    />
                     <Hamburger />
                   </div>
                 ) : (
@@ -64,7 +71,7 @@ export default function Header() {
 
                           {link.name === activeSection && (
                             <motion.span
-                              className="rounded-full absolute inset -0 -z-10 bg-purple w-full h-full"
+                              className="rounded-xl absolute border border-white inset -0 -z-10 bg-purple w-full h-full"
                               layoutId="activeSection"
                               transition={{
                                 type: "spring",
