@@ -65,5 +65,11 @@ html { scroll-behavior: smooth; }
 }
 
 
+/* styles.css or any imported CSS file */
+.origin-custom {
+  transform-origin: center 200%;
+}
+
+
  
  
