@@ -56,7 +56,7 @@ export default function Header() {
                       >
                         <Link
                           className={cn(
-                            "flex w-full items-center justify-center px-4 py-3  transition duration-150  text-orange ",
+                            "flex w-full items-center justify-center px-4 py-3  transition duration-150  text-white ",
                             {
                               "text-black": activeSection === link.name,
                             }
@@ -71,7 +71,7 @@ export default function Header() {
 
                           {link.name === activeSection && (
                             <motion.span
-                              className="rounded-xl absolute border border-white inset -0 -z-10 bg-purple w-full h-full"
+                              className="rounded-xl absolute border border-black shadow-lg inset -0 -z-10 bg-purple w-full h-full"
                               layoutId="activeSection"
                               transition={{
                                 type: "spring",
