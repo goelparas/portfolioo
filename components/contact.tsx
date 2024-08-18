@@ -31,12 +31,12 @@ export default function Contact() {
         once: true,
       }}
     >
-      <div className="h-[60vh] w-full flex flex-col items-center justify-between">
+      <div className="h-[80vh] w-full flex flex-col items-center justify-between">
 
         <div />
         <div className="flex flex-col gap-6 w-full">
           <div className="mb-28 flex flex-col gap-5">
-            <p className="animate-gradient-text text-[30px] font-markpro bg-gradient-to-r to-orange  from-purple bg-clip-text text-transparent text-left lg:text-4xl font-extrabold">
+            <p className="animate-gradient-text text-3xl  font-markpro bg-gradient-to-r to-orange  from-purple bg-clip-text text-transparent text-left lg:text-4xl font-extrabold">
               Sold yet?
             </p>
             <p className="text-foreground/80 text-left text-2xl font-circular">
@@ -44,13 +44,13 @@ export default function Contact() {
             </p>
           </div>
           <div className="flex flex-col text-left gap-2">
-            <p className="animate-gradient-text text-[25px] font-markpro bg-gradient-to-r to-orange  from-purple bg-clip-text text-transparent text-left lg:text-4xl font-extrabold">
+            <p className="animate-gradient-text text-3xl font-markpro bg-gradient-to-r to-orange  from-purple bg-clip-text text-transparent text-left lg:text-4xl font-extrabold">
               Dont be a stranger!
             </p>
             <p className="text-sm text-foreground font-circular text-left mb-4 ">
               Connect with me online
             </p>
-            <Socials />
+            <Socials allowidth  />
           </div>
         </div>
       </div>

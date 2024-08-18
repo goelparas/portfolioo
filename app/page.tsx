@@ -13,18 +13,20 @@ import Header from "@/components/header";
 import WordRotate from "@/components/magicui/word-rotate";
 import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import alienLottie from "@/components/animation/alien.json";
+import Footer from "@/components/footer";
 
-const words = [
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "TypeScript",
-  "HTML/CSS",
-  "Firebase",
-  "React Query",
-  "Redux",
-  "Framer Motion",
-];
+// const words = [
+//   "React",
+//   "Next.js",
+//   "Tailwind CSS",
+//   "TypeScript",
+//   "HTML/CSS",
+//   "Firebase",
+//   "React Query",
+//   "Redux",
+//   "Framer Motion",
+// ];
+const words =[]
 
 export default function Home() {
   const { width } = useWindowSize();
@@ -53,6 +55,7 @@ export default function Home() {
       <MyProjects />
       <Testimonials />
       <Contact />
+      <Footer />
     </main>
   );
 }
@@ -60,11 +63,11 @@ export default function Home() {
 const LoadingPage = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center gap-6">
-      <WordRotate
+      {/* <WordRotate
         words={words}
-        className="text-4xl bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent font-bold font-markpro"
+        className=" text-3xl lg:text-4xl bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent font-bold font-markpro"
         duration={1000}
-      />
+      /> */}
     </div>
   );
 };

@@ -7,7 +7,7 @@ export default function SectionHeading({
   text,
   children,
   className,
-  left = true,
+  left = false,
   right = true,
 }: {
   text: string;

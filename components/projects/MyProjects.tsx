@@ -83,7 +83,7 @@ export default function MyProjects() {
       <section
         id="projects"
         ref={ref}
-        className=" w-full px-10 lg:px-10 h-[60vh]"
+        className=" w-full px-10 lg:px-10 h-[70vh]"
       >
         <div className="relative flex items-center justify-center h-full w-full antialiased">
           {cards.map((card, index) => (

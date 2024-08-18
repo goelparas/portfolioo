@@ -7,6 +7,7 @@ import { ScreenSize } from "@/lib/types";
 
 type Props = {
   className?: string;
+  allowidth?: boolean;
 };
 
 const SOCIALS = [
@@ -45,7 +46,7 @@ const Socials = (props: Props) => {
     >
       {SOCIALS.map((social, index) => (
         <Link key={index} className="font-condensed text-xs lg:text-base" href={social.href}>
-          {width >= ScreenSize.MOBILE ? social.label : social.labelSm}
+          { (width >= ScreenSize.MOBILE || props.allowidth )? social.label : social.labelSm}
         </Link>
       ))}
     </div>

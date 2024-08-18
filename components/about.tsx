@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { Lottie } from "./lazy";
+import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import coffeCat from "@/components/animation/cat-coffee.json";
 import { useRouter } from "next/navigation";
 import Socials from "./socials";
