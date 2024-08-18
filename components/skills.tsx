@@ -27,7 +27,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="h-full lg:h-screen lg:mb-3 mt-32 lg:mt-0 w-full flex flex-col justify-center items-center"
+      className="h-full lg:h-screen lg:mb-3 mt-28 lg:mt-0 w-full flex flex-col justify-center items-center"
     >
       <SectionHeading className="mb-0"> Skills</SectionHeading>
       <SkillCircle />
