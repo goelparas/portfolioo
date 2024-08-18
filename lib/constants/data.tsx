@@ -38,6 +38,10 @@ export const links = [
     hash: "#experience",
   },
   {
+    name: "Testimonials",
+    hash: "#testimonials",
+  },
+  {
     name: "Contact",
     hash: "#contact",
   },
@@ -150,14 +154,20 @@ export const INFORMATION = {
         Thanks for stopping by, I’m currently looking to join a new team of
         creative designers and developers. If you think we might be a good fit
         for one another, send me an{" "}
-        <Link className="font-extrabold text-foreground" href={'mailto:goelparas.work@gmail.com'}>email</Link> &#128231;.
+        <Link
+          className="font-extrabold text-foreground"
+          href={"mailto:goelparas.work@gmail.com"}
+        >
+          email
+        </Link>{" "}
+        &#128231;.
       </>
     ),
-    SOCIALS :{
+    SOCIALS: {
       github: "https://www.github.com/goelparas",
       twitter: "https://www.twitter.com/goelparas",
       linkedin: "https://www.linkedin.com/in/goelparas",
       leetcode: "https://www.leetcode.com/goelparas",
-    }
+    },
   },
 };
