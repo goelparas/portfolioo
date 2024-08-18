@@ -24,6 +24,7 @@ export default function About() {
     >
       <main className="h-screen md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]">
         <div />
+
         <div className="flex flex-col w-full gap-6 justify-center items-start h-full">
           <h1 className="text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden">
             turning idea into real life{" "}

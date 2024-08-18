@@ -21,7 +21,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="h-full lg:h-screen lg:mb-3 mt-28 lg:mt-0 w-full flex flex-col justify-center items-center"
+      className="h-full  lg:mb-3 mt-28 lg:mt-0 w-full flex flex-col justify-center items-center"
     >
      <SkillCircle/>
     </section>
