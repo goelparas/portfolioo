@@ -53,7 +53,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          `relative  bg-black text-white text-opacity-90`,
+          `relative  bg-black text-white text-opacity-90 `,
           circular.className,
           markPro.variable,
           condensed.variable

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { links } from "@/lib/constants/data";
+import { AVATAR, links } from "@/lib/constants/data";
 import Link from "next/link";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
@@ -36,12 +36,11 @@ export default function Header() {
                 (windowSize.width < ScreenSize.MOBILE ? (
                   <div className="flex justify-between items-center w-full">
                     <Image
-                      src={
-                        "https://readyplayer.me/gallery/66a630a5553871e7cab1284e-JSYznGjpeg"
-                      }
+                      src={AVATAR}
                       alt="icon-avatar"
-                      width={30}
-                      height={30}
+                      width={50}
+                      height={50}
+                      className="rounded-full shadow-xl"
                     />
                     <Hamburger />
                   </div>

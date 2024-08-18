@@ -221,3 +221,6 @@ export const projects = [
     longDescription: "Top Secret Links is a robust media-sharing platform built with Next.js, specifically designed to empower content creators by enabling them to share valuable resources and monetize their work through microtransactions. The platform has successfully generated over $50k in revenue, highlighting its effectiveness in supporting creators' financial growth. The project integrates secure payment gateways and provides a seamless experience for both creators and consumers, making it a significant player in the digital content economy."
   },
 ];
+
+
+export const AVATAR = "https://raw.githubusercontent.com/goelparas/imFWEA/master/avatar.jpg"

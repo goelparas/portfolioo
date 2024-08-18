@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/about";
+import CommonHand from "@/components/common/commonhand";
 import Contact from "@/components/contact";
 import MyProjects from "@/components/projects/MyProjects";
 import Testimonials from "@/components/testimonials";
