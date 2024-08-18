@@ -22,7 +22,7 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <main className="h-screen md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[15%]">
+      <main className="h-screen md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]">
         <div />
         <div className="flex flex-col w-full gap-6 justify-center items-start h-full">
           <h1 className="text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden">
@@ -40,7 +40,7 @@ export default function About() {
             is my calling .
           </h1>
           <p
-            className="font-condensed  text-left cursor-pointer   group  flex flex-col gap-0.5"
+            className="font-condensed  text-left cursor-pointer   group  flex flex-col gap-0.5 text-2xl"
             onClick={handleProjects}
           >
             <span>
