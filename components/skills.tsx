@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "./common/section-heading";
 import { skillsData } from "@/lib/constants/data";
 import { useSectionInView } from "@/lib/hooks";
-import { SkillCircle } from "./SkillCircle";
+import { SkillCircle } from "./skills/SkillCircle";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -27,9 +27,9 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="lg:h-[100dvh] mb-3 sm:mb-8 w-full"
-    > 
-    <SectionHeading> Skills</SectionHeading>
+      className="h-full lg:h-screen lg:mb-3 mt-32 lg:mt-0 w-full flex flex-col justify-center items-center"
+    >
+      <SectionHeading className="mb-0"> Skills</SectionHeading>
       <SkillCircle />
     </section>
   );

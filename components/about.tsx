@@ -57,7 +57,9 @@ export default function About() {
         <div className="flex flex-col  w-full gap-5">
           <div className="flex items-center justify-end">
             <div className="flex  justify-end items-end">
-              <div className="flex items-end w-4/5 "><Socials/></div> 
+              <div className="flex items-end w-4/5 ">
+                <Socials />
+              </div>
               <Lottie
                 animationData={coffeCat}
                 play
@@ -66,7 +68,7 @@ export default function About() {
               />
             </div>
           </div>
-          <p className="font-condensed text-left text-xs w-full">
+          <p className="font-condensed text-left lg:text-right text-xs w-full">
             Hello stranger! 👋, my name is Paras and I am a frontend engineer,
             passionate about digital products that help people experience
             everyday life, not endure it.

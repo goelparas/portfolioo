@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import OrbitingCircles from "@/components/ui/orbiting-circle";
 import { skillsData } from "@/lib/constants/data";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 export function SkillCircle() {
   const windowSize = useWindowSize();
   const [isClient, setisClient] = useState(false);
@@ -42,11 +42,17 @@ export function SkillCircle() {
     }
   }
 
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   return (
-    <motion.div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg" 
-      
-    >
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-orange to-gray-300 bg-clip-text text-center lg:text-8xl text-[50px] font-semibold leading-none text-transparent dark:from-white dark:to-orange">
+    <motion.div className="relative flex h-[500px] lg:h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b  bg-clip-text text-center lg:text-8xl text-[50px] font-semibold leading-none text-transparent from-white to-orange">
         Skills
       </span>
 
