@@ -41,7 +41,7 @@ export default function About() {
             is my calling .
           </h1>
           <p
-            className="font-condensed  text-left cursor-pointer   group  flex flex-col gap-0.5 text-2xl"
+            className="font-condensed  text-left cursor-pointer   group  flex flex-col gap-0.5 lg:text-2xl"
             onClick={handleProjects}
           >
             <span>

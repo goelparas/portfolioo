@@ -38,8 +38,8 @@ const condensed = localFont({
 });
 
 export const metadata = {
-  title: "Ricardo | Personal Portfolio",
-  description: "Ricardo is a full-stack developer with 8 years of experience.",
+  title: "Paras  | Personal Portfolio",
+  description: "Paras is a frontend developer with 1+ year of experience.",
 };
 
 export default function RootLayout({
@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          `relative  bg-gray-900 text-white text-opacity-90`,
+          `relative  bg-black text-white text-opacity-90`,
           circular.className,
           markPro.variable,
           condensed.variable
@@ -62,7 +62,6 @@ export default function RootLayout({
 
         <ActiveSectionContextProvider>
           <Header />
-
           {children}
           <Footer />
           <Toaster position="top-right" />

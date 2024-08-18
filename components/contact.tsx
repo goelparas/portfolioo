@@ -5,10 +5,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
-
 import Link from "next/link";
 import { INFORMATION } from "@/lib/constants/data";
 import Socials from "./socials";
+import SectionHeading from "./common/section-heading";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -50,7 +50,7 @@ export default function Contact() {
             <p className="text-sm text-foreground font-circular text-left mb-4 ">
               Connect with me online
             </p>
-            <Socials/>
+            <Socials />
           </div>
         </div>
       </div>

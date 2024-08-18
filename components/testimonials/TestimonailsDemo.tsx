@@ -5,17 +5,13 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export function TestimonialsDemo() {
   return (
-    <div className="flex flex-col antialiased items-center justify-center gap-6">
+    <div className="flex flex-col antialiased justify-center gap-6 min-w-full">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
-        speed="normal"
+        speed="fast"
       />
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="left"
-        speed="normal"
-      />
+      <InfiniteMovingCards items={testimonials} direction="left" speed="fast" />
     </div>
   );
 }
@@ -23,31 +19,49 @@ export function TestimonialsDemo() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "🚀 The UI is sleek and responsive, making everything feel effortless.",
+    username: "@aditya",
+    name: "Aditya",
+    linkedIn: "https://www.linkedin.com/in/jain-adi",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "💡 The design is intuitive, with attention to detail that stands out.",
+    username: "@paras",
+    name: "Paras",
+    linkedIn: "https://www.linkedin.com/in/goelparas01",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "🔥 Fast, smooth, and visually stunning. A top-notch frontend experience!",
+    username: "@armaan",
+    name: "Armaan",
+    linkedIn: "https://www.linkedin.com/in/armaanalam",
+  },
+  {
+    quote: "⚙️ Everything works flawlessly across devices. Truly impressive.",
+    username: "@piyush",
+    name: "Piyush",
+    linkedIn: "https://www.linkedin.com/in/piyush2818",
+  },
+  {
+    quote: "🌟 The frontend is polished and user-friendly. A joy to navigate.",
+    username: "@abhishek",
+    name: "Abhishek",
+    linkedIn: "https://www.linkedin.com/in/abhishek-chorotiya-7a1a0a222",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "💻 High-quality code and great performance. The UI is a pleasure to use.",
+    username: "@thabish",
+    name: "Thabish",
+    linkedIn: "https://www.linkedin.com/in/thabish",
+  },
+  {
+    quote:
+      "🔧 The user interface is intuitive and works perfectly. Highly recommended!",
+    username: "@manthan",
+    name: "Manthan",
+    linkedIn: "https://www.linkedin.com/in/manthan77",
   },
 ];

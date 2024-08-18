@@ -11,7 +11,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="mb-28 flex flex-col items-center w-full "
+      className="mb-28 px-4 flex flex-col items-center w-full h-screen"
     >
       <SectionHeading text="Experience"/>
       <ExpandableCardDemo />

@@ -6,14 +6,15 @@ type SectionHeadingProps = {
   text: string;
   left?:boolean
   right?:boolean
+  icon?: React.ReactNode;
 };
 
 export default function SectionHeading({
   text,
   className,
   left=false,
-  right=true
-
+  right=true,
+  icon,
 }: SectionHeadingProps) {
 
   
@@ -28,7 +29,9 @@ export default function SectionHeading({
         </p>
       </div>
 
-      { right &&<Image src="/right-line.svg" width={120} height={3} alt="left stroke" />}
+      { right &&<Image src="/right-line.svg" width={180} height={3} alt="left stroke" />}
+
+      <span className="mt-1">{icon}</span>
     </div>
   );
 }
