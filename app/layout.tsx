@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          `relative  bg-gray-900 text-white text-opacity-90 lg:px-[20%]`,
+          `relative  bg-black text-white text-opacity-90`,
           circular.className,
           markPro.variable,
           condensed.variable
@@ -62,7 +62,6 @@ export default function RootLayout({
 
         <ActiveSectionContextProvider>
           <Header />
-
           {children}
           <Footer />
           <Toaster position="top-right" />

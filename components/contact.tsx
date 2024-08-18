@@ -5,10 +5,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
-
 import Link from "next/link";
 import { INFORMATION } from "@/lib/constants/data";
 import Socials from "./socials";
+import SectionHeading from "./common/section-heading";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -17,7 +17,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 sm:mb-28 w-[min(100%,50rem)] text-center px-4"
       initial={{
         opacity: 0,
       }}
@@ -34,11 +34,9 @@ export default function Contact() {
       <div className="h-dvh w-full flex flex-col items-center justify-between">
         <div />
         <div />
-        <div className="flex flex-col gap-6">
-          <div className="mb-28 flex flex-col gap-5">
-            <p className="animate-gradient-text text-[30px] font-markpro bg-gradient-to-r to-orange font-extrabold from-purple bg-clip-text text-transparent text-left">
-              Sold yet?
-            </p>
+        <div className="flex flex-col gap-6 w-full">
+          <div className="mb-28 flex flex-col gap-5 w-full">
+            <SectionHeading>Sold yet?</SectionHeading>
             <p className="text-foreground/80 text-left text-2xl font-circular">
               {INFORMATION.CONTACT.MESSAGE}
             </p>
@@ -50,7 +48,7 @@ export default function Contact() {
             <p className="text-sm text-foreground font-circular text-left mb-4">
               Connect with me online
             </p>
-            <Socials/>
+            <Socials />
           </div>
         </div>
       </div>

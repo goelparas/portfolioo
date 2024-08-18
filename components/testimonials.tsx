@@ -9,11 +9,16 @@ const Testimonials = () => {
   const { ref } = useSectionInView("Testimonials", 0.5);
   return (
     <section
-      className="h-screen w-full flex flex-col justify-center items-center"
+      className="h-full w-full py-20 flex flex-col justify-center items-center"
       ref={ref}
       id="testimonials"
     >
-      <SectionHeading>Testimonials</SectionHeading>
+      <SectionHeading
+        icon="😊"
+        className="flex justify-center items-center px-0 w-full"
+      >
+        Mmmm, a little brag
+      </SectionHeading>
       <TestimonialsDemo />
     </section>
   );
