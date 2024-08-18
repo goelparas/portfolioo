@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import coffeCat from "@/components/animation/cat-coffee.json";
-import hello from "@/components/animation/hello.json";
 import { useRouter } from "next/navigation";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import Socials from "./socials";
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -26,10 +24,10 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <main className="h-screen flex flex-col items-left justify-between gap-8  py-6">
+      <main className="h-[90vh] flex flex-col items-left justify-between gap-8  py-6 px-4">
         <div />
         <div className="flex flex-col w-full gap-6 justify-center items-start h-full">
-          <h1 className="text-[3.4rem] tracking-tighter text-white font-bold text-left leading-[48px] font-markpro lg:hidden">
+          <h1 className="text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden">
             turning idea into real life{" "}
             <span className="animate-gradient-text bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent">
               product{" "}

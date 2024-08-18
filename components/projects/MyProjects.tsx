@@ -97,12 +97,14 @@ export default function MyProjects() {
 
   return (
     <section id="projects" ref={ref} className="h-[80dvh] w-full px-4 lg:px-10">
-      <SectionHeading>Projects</SectionHeading>
+      <SectionHeading text="My Projects"/>
+
       <div className="relative flex items-center justify-center h-full w-full">
         {cards.map((card, index) => (
           <TinderCard
             key={index}
             preventSwipe={["up", "down"]}
+            swipeThreshold={0.5}
             className="absolute top-16 w-full md:w-[35rem]"
             onSwipe={(dir) => onSwipe(dir, index)}
             onCardLeftScreen={() => onCardLeftScreen(index)}
@@ -144,8 +146,14 @@ export default function MyProjects() {
                   </CardItem>
                   <CardItem
                     translateZ="100"
+<<<<<<< Updated upstream:components/projects/MyProjects.tsx
                     className="w-full mt-4 overflow-hidden"
                     onClick={() => {
+=======
+                    className="w-full mt-4"
+                    onClick={(event:any) => {
+                        event.stopPropogation();
+>>>>>>> Stashed changes:components/MyProjects.tsx
                       setSelectedCard(index);
                       setDetailModal(true);
                     }}
@@ -158,6 +166,10 @@ export default function MyProjects() {
                       src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       className="h-[16rem] sm:h-[14rem] w-full object-cover rounded-xl group-hover/card:shadow-xl"
                       alt="thumbnail"
+                      onTouchStart={() => {
+                        setSelectedCard(index);
+                        setDetailModal(true);
+                      }}
                     />
                   </CardItem>
                 </CardBody>

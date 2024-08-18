@@ -39,7 +39,7 @@ const Socials = (props: Props) => {
   return (
     <div
       className={cn(
-        "w-full flex items-center justify-start gap-2 text-foreground",
+        "w-full flex items-center justify-start gap-3 text-foreground",
         props.className
       )}
     >
