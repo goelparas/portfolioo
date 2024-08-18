@@ -5,13 +5,13 @@ import SectionHeading from "../common/section-heading";
 import TinderCard from "react-tinder-card";
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card-effect";
 import { Drawer, DrawerContent } from "../common/Drawer";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import loadingLottie from "@/components/animation/loading-lottie.json";
 import { projects } from "@/lib/constants/data";
+
 export default function MyProjects() {
   const { ref } = useSectionInView("Projects");
   const [detailModal, setDetailModal] = React.useState(false);
@@ -81,11 +81,11 @@ export default function MyProjects() {
     <section
       id="projects"
       ref={ref}
-      className=" w-full px-10 lg:px-10 h-[60vh]"
+      className="flex flex-col gap-0 w-full justify-center items-center h-[60vh] mb-28"
     >
-      <SectionHeading text="My Projects" />
+      <SectionHeading text="My Projects" className="mb-0" />
 
-      <div className="relative flex items-center justify-center h-full w-full antialiased">
+      <div className="relative flex items-center justify-center h-full w-full antialiased px-10 ">
         {cards.map((card, index) => (
           <TinderCard
             key={index}
@@ -179,7 +179,7 @@ export default function MyProjects() {
             className="text-3xl font-bold -ml-4"
             variants={childVariants}
           >
-             <SectionHeading text={projects[selectedCard].title} />
+            <SectionHeading text={projects[selectedCard].title} />
           </motion.div>
           <motion.img
             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -191,13 +191,9 @@ export default function MyProjects() {
             variants={childVariants}
           >
             {projects[selectedCard].longDescription}
-
           </motion.p>
-          <motion.div
-            className="text-3xl font-bold"
-            variants={childVariants}
-          >
-             <SectionHeading text="Live link" left right={false} />
+          <motion.div className="text-3xl font-bold" variants={childVariants}>
+            <SectionHeading text="Live link" left right={false} />
           </motion.div>
         </motion.div>
       </GlassMorphedDrawer>
