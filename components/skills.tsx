@@ -21,16 +21,12 @@ const fadeInAnimationVariants = {
 };
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
-
   return (
     <section
       id="skills"
-      ref={ref}
-      className="h-full lg:h-screen lg:mb-3 mt-32 lg:mt-0 w-full flex flex-col justify-center items-center"
+      className="h-full lg:h-screen w-full flex flex-col justify-center items-center"
     >
-      <SectionHeading className="mb-0"> Skills</SectionHeading>
-      <SkillCircle />
+     <SkillCircle/>
     </section>
   );
 }

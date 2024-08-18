@@ -64,7 +64,7 @@ export default function Experience() {
       id="experience"
       className="mb-28 flex flex-col items-center w-full h-screen"
     >
-      <SectionHeading>Experience</SectionHeading>
+      <SectionHeading text="My Experience"/>
       <LayoutGroup>
         <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
           {items.map((item) => (

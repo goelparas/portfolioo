@@ -39,12 +39,12 @@ const Socials = (props: Props) => {
   return (
     <div
       className={cn(
-        "w-full flex items-center justify-start gap-3 text-foreground",
+        "w-full flex items-center justify-start gap-3 text-foreground hover:cursor-pointer",
         props.className
       )}
     >
       {SOCIALS.map((social, index) => (
-        <Link key={index} className="font-condensed text-xs" href={social.href}>
+        <Link key={index} className="font-condensed text-xs lg:text-base" href={social.href}>
           {width >= ScreenSize.MOBILE ? social.label : social.labelSm}
         </Link>
       ))}

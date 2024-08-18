@@ -51,7 +51,7 @@ export function SkillCircle() {
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
-    <motion.div className="relative flex h-[500px] lg:h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+    <motion.div className="relative flex h-[350px] lg:h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b  bg-clip-text text-center lg:text-8xl text-[50px] font-semibold leading-none text-transparent from-white to-orange">
         Skills
       </span>

@@ -17,7 +17,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 w-full lg:px-[20%] text-center"
       initial={{
         opacity: 0,
       }}
@@ -31,10 +31,10 @@ export default function Contact() {
         once: true,
       }}
     >
-      <div className="h-dvh w-full flex flex-col items-center justify-between">
+      <div className="h-[60vh] w-full flex flex-col items-center justify-between">
+
         <div />
-        <div />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 w-full">
           <div className="mb-28 flex flex-col gap-5">
             <p className="animate-gradient-text text-[30px] font-markpro bg-gradient-to-r to-orange font-extrabold from-purple bg-clip-text text-transparent text-left">
               Sold yet?

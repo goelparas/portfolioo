@@ -1,23 +1,29 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-
+import Image from "next/image";
 type SectionHeadingProps = {
-  children: React.ReactNode;
   className?: string;
+  text: string;
 };
 
 export default function SectionHeading({
-  children,
+  text,
   className,
 }: SectionHeadingProps) {
+
+  
   return (
-    <h2
-      className={cn(
-        "text-3xl font-medium capitalize mb-8 text-center",
-        className
-      )}
-    >
-      {children}
-    </h2>
+    <div className={cn(`flex items-center justify-center w-full gap-2 `)}>
+      <Image src="/left-line.svg" width={180} height={3} alt="left stroke" />
+      <div className="flex items-center justify-between gap-1 w-fit">
+        <p
+          className={cn(`label-md text-text-secondary text-center text-2xl lg:text-4xl`, className)}
+        >
+          {text}
+        </p>
+      </div>
+
+      <Image src="/right-line.svg" width={180} height={3} alt="left stroke" />
+    </div>
   );
 }

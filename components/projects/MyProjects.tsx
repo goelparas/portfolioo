@@ -105,10 +105,10 @@ export default function MyProjects() {
             key={index}
             preventSwipe={["up", "down"]}
             swipeThreshold={0.5}
-            className="absolute top-16 w-full md:w-[35rem]"
+            className="absolute top-16  w-fit"
+
             onSwipe={(dir) => onSwipe(dir, index)}
             onCardLeftScreen={() => onCardLeftScreen(index)}
-            swipeThreshold={0.5}
           >
             <div
               className={cn(
@@ -146,14 +146,8 @@ export default function MyProjects() {
                   </CardItem>
                   <CardItem
                     translateZ="100"
-<<<<<<< Updated upstream:components/projects/MyProjects.tsx
                     className="w-full mt-4 overflow-hidden"
                     onClick={() => {
-=======
-                    className="w-full mt-4"
-                    onClick={(event:any) => {
-                        event.stopPropogation();
->>>>>>> Stashed changes:components/MyProjects.tsx
                       setSelectedCard(index);
                       setDetailModal(true);
                     }}

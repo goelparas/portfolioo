@@ -9,22 +9,20 @@ import { useRouter } from "next/navigation";
 import Socials from "./socials";
 export default function About() {
   const { ref } = useSectionInView("About");
-
   const router = useRouter();
-
   const handleProjects = () => {
     router.push("/#projects");
   };
   return (
     <motion.section
       ref={ref}
-      className="mb-28  text-center leading-8 sm:mb-40 scroll-mt-28 "
+      className="mb-28  text-center leading-8 sm:mb-40 scroll-mt-32"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <main className="h-[90vh] flex flex-col items-left justify-between gap-8  py-6 px-4">
+      <main className="h-screen md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[15%]">
         <div />
         <div className="flex flex-col w-full gap-6 justify-center items-start h-full">
           <h1 className="text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden">
@@ -62,11 +60,11 @@ export default function About() {
                 animationData={coffeCat}
                 play
                 loop
-                className="h-20 w-20"
+                className="h-20 w-20 lg:h-40 lg:w-40"
               />
             </div>
           </div>
-          <p className="font-condensed text-left lg:text-right text-xs w-full">
+          <p className="font-condensed text-left lg:text-right text-xs w-full lg:text-base">
             Hello stranger! 👋, my name is Paras and I am a frontend engineer,
             passionate about digital products that help people experience
             everyday life, not endure it.
