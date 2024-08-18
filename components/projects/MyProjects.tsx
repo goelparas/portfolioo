@@ -78,12 +78,14 @@ export default function MyProjects() {
   };
 
   return (
+    <>
+    <SectionHeading text="My Projects" />
     <section
       id="projects"
       ref={ref}
       className=" w-full px-10 lg:px-10 h-[60vh]"
     >
-      <SectionHeading text="My Projects" />
+      
 
       <div className="relative flex items-center justify-center h-full w-full antialiased">
         {cards.map((card, index) => (
@@ -202,6 +204,8 @@ export default function MyProjects() {
         </motion.div>
       </GlassMorphedDrawer>
     </section>
+    </>
+   
   );
 }
 

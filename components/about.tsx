@@ -7,6 +7,7 @@ import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import coffeCat from "@/components/animation/cat-coffee.json";
 import { useRouter } from "next/navigation";
 import Socials from "./socials";
+import CommonHand from "./common/commonhand";
 export default function About() {
   const { ref } = useSectionInView("About");
   const router = useRouter();
@@ -22,9 +23,9 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <main className="h-screen md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]">
+      <main className="h-dvh md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]">
         <div />
-
+        <CommonHand/>
         <div className="flex flex-col w-full gap-6 justify-center items-start h-full">
           <h1 className="text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden">
             turning idea into real life{" "}
@@ -45,7 +46,7 @@ export default function About() {
             onClick={handleProjects}
           >
             <span>
-              <span className=" w-fit py-1 pr-0.5 text-left ">View</span>
+              <span className=" w-fit py-1 pr-0.5 text-left">View</span>
               <span>Projects</span>
             </span>
             <span className="w-4  group-hover:w-full bg-white transition-all duration-300 h-[1px]"></span>
