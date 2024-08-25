@@ -12,8 +12,7 @@ import { Hamburger } from "./icons/common";
 import Image from "next/image";
 
 export default function Header() {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =useActiveSectionContext();
 
   const windowSize = useWindowSize();
   const { isScrolling } = useScroll();
@@ -23,7 +22,7 @@ export default function Header() {
       {!isScrolling && (
         <motion.header
           className={cn(
-            `z-50 w-full  h-fit fixed  top-8  left-0  flex items-center justify-center`
+            `z-50 w-full  h-fit fixed hidden  top-8  left-0  sm:flex items-center justify-center`
           )}
         >
           <motion.div

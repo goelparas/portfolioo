@@ -30,45 +30,16 @@ export const words = [
 
 export default function Home() {
   const { width } = useWindowSize();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, words.length * 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // if (loading) return <LoadingPage />;
 
   return (
     <main className='flex flex-col items-center px-4 overflow-x-hidden relative'>
       <Header />
-      <Image
-        src={'/left-hand.webp'}
-        width={width! > ScreenSize.MOBILE ? 140 : 60}
-        height={width! > ScreenSize.MOBILE ? 140 : 60}
-        alt='asdf'
-        className='absolute left-0 top-0'
-      />
       <About />
       <Experience />
       <MyProjects />
       <Testimonials />
       <Contact />
-      <Footer />
+      <Footer /> 
     </main>
   );
 }
-
-const LoadingPage = () => {
-  return (
-    <div className='h-screen w-screen flex items-center justify-center gap-6'>
-      {/* <WordRotate
-        words={words}
-        className=" text-3xl lg:text-4xl bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent font-bold font-markpro"
-        duration={1000}
-      /> */}
-    </div>
-  );
-};

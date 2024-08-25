@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import SectionHeading from "../common/section-heading";
-import TinderCard from "react-tinder-card";
+import SectionHeading from "../section-heading";
+import  Heading from "../common/section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card-effect";
@@ -11,7 +11,17 @@ import { motion } from "framer-motion";
 import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import loadingLottie from "@/components/animation/loading-lottie.json";
 import { projects } from "@/lib/constants/data";
-
+import dynamic from "next/dynamic";
+import { useWindowSize } from "@/lib/hooks/useWindowSize";
+import { ScreenSize } from "@/lib/types";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+} from "../ui/dialog";
+const TinderCard = dynamic(() => import("react-tinder-card"), { ssr: false });
 export default function MyProjects() {
   const { ref } = useSectionInView("Projects");
   const [detailModal, setDetailModal] = React.useState(false);
@@ -21,13 +31,10 @@ export default function MyProjects() {
   const [cards, setCards] = React.useState(projects);
 
   const onSwipe = (direction: string, identifier: number) => {
-    console.log("You swiped: " + direction);
     setSwipedCards((prev) => new Set(prev).add(identifier));
   };
 
   const onCardLeftScreen = (identifier: number) => {
-    console.log(identifier + " left the screen");
-    // Optional: Remove the card from the list
     setCards((prev) => prev.filter((_, index) => index !== identifier));
   };
 
@@ -79,7 +86,7 @@ export default function MyProjects() {
 
   return (
     <>
-      <SectionHeading text="My Projects" />
+      <Heading text="My Projects" ></Heading>
       <section
         id="projects"
         ref={ref}
@@ -131,7 +138,9 @@ export default function MyProjects() {
                           <img
                             src={card.imageUrl}
                             alt="Image"
-                            className="w-full h-full rounded-lg"
+                            className="w-full h-full rounded-lg select-none"
+                            draggable={false}
+
                           />
                         </div>
                         <img
@@ -173,33 +182,39 @@ export default function MyProjects() {
 
         <GlassMorphedDrawer open={detailModal} onOpenChange={setDetailModal}>
           <motion.div
-            className="text-white flex flex-col justify-start items-start gap-2 overflow-y-scroll scrollbar-hide pl-6"
+            className="text-white flex flex-col justify-start items-start gap-2 overflow-y-scroll scrollbar-hide "
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.div className="text-3xl font-bold " variants={childVariants}>
+            <motion.div
+              className="text-3xl font-bold  mb-14"
+              variants={childVariants}
+            >
               <SectionHeading
                 text={projects[selectedCard].title}
+            className="text-3xl"
                 right={false}
               />
             </motion.div>
-    
-              <motion.img 
-                src={projects[selectedCard].imageUrl}
-                alt="thumbnail"
-                className="rounded-2xl  w-[90%] h-4/5  overflow-x-hidden"
-              />
- 
+
+            <motion.img
+              src={projects[selectedCard].imageUrl}
+              alt="thumbnail"
+              className="rounded-2xl  w-[90%] h-4/5  overflow-x-hidden select-none"
+              draggable={false}
+            />
 
             <motion.p
-              className="text-sm mb-2 text-justify rounded-xl text-white py-4 pr-4"
+              className="text-sm mb-2 text-justify rounded-xl text-white py-4 pr-4 font-markpro"
               variants={childVariants}
             >
               {projects[selectedCard].longDescription}
             </motion.p>
-            <motion.div className="text-3xl font-bold" variants={childVariants}>
-              <SectionHeading text="Live link" left right={false} />
+            <motion.div className="text-3xl font-bold flex justify-end w-full" variants={childVariants}>
+              <motion.button role="link" className="px-3 py-2 text-lg sm:text-sm  w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0">
+                View Live
+              </motion.button>
             </motion.div>
           </motion.div>
         </GlassMorphedDrawer>
@@ -219,14 +234,32 @@ const GlassMorphedDrawer = ({
   onOpenChange,
   ...props
 }: GlassMorphedDrawerProps) => {
+  const { width } = useWindowSize();
+  if (!width) return null;
+
   return (
-    <Drawer open={open} onOpenChange={onOpenChange} direction="right">
-      <DrawerContent
-        className="h-full w-full bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-none   py-8"
-        showPill={false}
-      >
-        {props.children}
-      </DrawerContent>
-    </Drawer>
+    <>
+      {width < ScreenSize.MOBILE ? (
+        <Drawer open={open} onOpenChange={onOpenChange} direction="right">
+          <DrawerContent
+            className="h-full w-full bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border-none   py-8 px-6 sm:px-[20%]"
+            showPill={false}
+          >
+            {props.children}
+          </DrawerContent>
+        </Drawer>
+      ) : (
+        <Dialog open={open} onOpenChange={onOpenChange}>
+          <DialogClose className="outline-none"/>
+          <DialogContent className="border-none bg-transparent rounded-2xl bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
+            <DialogHeader>
+              <DialogDescription className="border-none">
+                {props.children}
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
   );
 };

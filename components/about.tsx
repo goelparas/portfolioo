@@ -25,10 +25,10 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id='about'
     >
-      <main className='h-dvh md:h-[90vh]  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]'>
+      <main className='h-dvh  flex flex-col items-left justify-between gap-8  py-6 px-4 md:px-[20%]'>
         <div />
         <CommonHand />
-        <div className='flex flex-col w-full gap-6 justify-center items-start h-full'>
+        <div className='flex flex-col w-full gap-6 justify-center items-start h-full mt-20'>
           <h1 className='text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden'>
             turning idea into real life{' '}
             <span className='animate-gradient-text bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent'>
@@ -36,7 +36,7 @@ export default function About() {
             </span>
             is my calling .
           </h1>
-          <h1 className=' hidden lg:block text-[5.5rem] text-white font-bold text-left leading-[5rem] tracking-tighter  font-markpro'>
+          <h1 className=' hidden lg:block text-[5.5rem] text-white font-bold text-left leading-[5.4rem] tracking-tighter  font-markpro'>
             turning idea into real life{' '}
             <span className='animate-gradient-text bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent'>
               product{' '}
@@ -51,19 +51,19 @@ export default function About() {
               <span className=' w-fit py-1 pr-0.5 text-left'>View</span>
               <span>Projects</span>
             </span>
-            <span className='w-4  group-hover:w-full bg-white transition-all duration-300 h-[1px]'></span>
+            <span className='w-4  group-hover:w-full bg-white transition-all duration-300 h-[1px]' />
           </p>
         </div>
         <div className='flex flex-col  w-full gap-5'>
-          <div className='flex items-center justify-between '>
-            <div className='-mb-11'>
-              <WordRotate
+          <div className='flex items-center justify-between  gap-1'>
+            <div className='flex justify-start items-end -mb-14 md:-mb-32 w-2/5'>
+            <WordRotate
                 words={words}
-                className=' text-3xl lg:text-4xl bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent font-bold font-markpro'
+                className='text-xs lg:text-xl bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent font-bold font-markpro'
                 duration={1000}
               />
             </div>
-            <div className='flex  justify-end items-end'>
+            <div className='flex  justify-end items-end h-full'>
               <div className='flex items-end w-4/5 '>
                 <Socials />
               </div>
@@ -75,7 +75,7 @@ export default function About() {
               />
             </div>
           </div>
-          <p className='font-condensed text-left lg:text-right text-xs w-full lg:text-base'>
+          <p className='font-condensed text-left   text-xs w-full lg:text-base'>
             Hello stranger! 👋, my name is Paras and I am a frontend engineer,
             passionate about digital products that help people experience
             everyday life, not endure it.
