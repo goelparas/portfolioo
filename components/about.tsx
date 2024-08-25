@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import Socials from './socials';
 import CommonHand from './common/commonhand';
 import WordRotate from './magicui/word-rotate';
-import { words } from '@/app/page';
+import { words } from '@/lib/constants/data';
 export default function About() {
   const { ref } = useSectionInView('About');
   const router = useRouter();

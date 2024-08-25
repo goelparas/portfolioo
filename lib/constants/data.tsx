@@ -455,3 +455,16 @@ export const COMPANY_NAME = [
     ),
   },
 ];
+
+
+export const words = [
+  'React',
+  'Next.js',
+  'Tailwind CSS',
+  'TypeScript',
+  'HTML/CSS',
+  'Firebase',
+  'React Query',
+  'Redux',
+  'Framer Motion',
+];
