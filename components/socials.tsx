@@ -45,7 +45,7 @@ const Socials = (props: Props) => {
       )}
     >
       {SOCIALS.map((social, index) => (
-        <Link key={index} className="font-condensed text-xs lg:text-base" href={social.href}>
+        <Link key={index} className="font-condensed text-xs lg:text-base" href={social.href} target="_blank">
           { (width >= ScreenSize.MOBILE || props.allowidth )? social.label : social.labelSm}
         </Link>
       ))}

@@ -123,7 +123,7 @@ export function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-400   overflow-y-scroll pb-32 sm:p-0 h-full md:h-[450px] scrollbar-hide"
+                    className="text-neutral-400   overflow-y-scroll pb-32  h-full md:h-80 scrollbar-hide"
                   >
                     {typeof active.content === "function"
                       ? active.content()

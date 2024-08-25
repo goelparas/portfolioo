@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
@@ -40,8 +39,8 @@ const condensed = localFont({
 });
 
 export const metadata = {
-  title: "Paras  | Personal Portfolio",
-  description: "Paras is a frontend developer with 1+ year of experience.",
+  title: "Paras  | Frontend Developer",
+  description: "I am Paras, a frontend developer skilled in Next.js and React, who has built and scaled apps generating over $100k+ in revenue.",
 };
 
 export default function RootLayout({
