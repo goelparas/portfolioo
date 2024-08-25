@@ -4,7 +4,6 @@ import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
 
 const circular = localFont({
   src: "../public/fonts/circular-std.ttf",

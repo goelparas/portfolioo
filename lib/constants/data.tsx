@@ -109,8 +109,8 @@ export const INFORMATION = {
     ),
     SOCIALS: {
       github: "https://www.github.com/goelparas",
-      twitter: "https://www.twitter.com/goelparas",
-      linkedin: "https://www.linkedin.com/in/goelparas",
+      twitter: "https://www.twitter.com/Paras_goelL",
+      linkedin: "https://www.linkedin.com/in/goelparas01",
       resume: "https://drive.google.com/file/d/1xg4zweEuFEqkglemqVwjwc7iC6f0UfIv/view?usp=sharing",
       
     },
