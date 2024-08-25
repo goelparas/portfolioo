@@ -34,13 +34,6 @@ const testimonials = [
   },
   {
     quote:
-      '💡 The design is intuitive, with attention to detail that stands out.',
-    username: '@paras',
-    name: 'Paras',
-    linkedIn: 'https://www.linkedin.com/in/goelparas01',
-  },
-  {
-    quote:
       '🔥 Fast, smooth, and visually stunning. A top-notch frontend experience!',
     username: '@armaan',
     name: 'Armaan',
@@ -71,5 +64,12 @@ const testimonials = [
     username: '@manthan',
     name: 'Manthan',
     linkedIn: 'https://www.linkedin.com/in/manthan77',
+  },
+  {
+    quote:
+      '🔧 Paras is a talented React developer with a knack for delivering efficient, high-quality code',
+    username: '@agrawalharsh90',
+    name: 'Harsh ',
+    linkedIn: 'https://www.linkedin.com/in/agrawalharsh90',
   },
 ];

@@ -33,7 +33,7 @@ export default function SectionHeading({
       <div className="flex items-center justify-between gap-1 w-fit">
         {children}
         <p
-          className={cn(`label-md font-markpro text-center text-2xl`, className)}
+          className={cn(`label-md font-markpro text-left text-2xl`, className)}
         >
           {text}
         </p>

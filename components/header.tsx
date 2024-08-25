@@ -10,13 +10,10 @@ import { cn } from "@/lib/utils";
 import { useScroll } from "@/lib/hooks/useScroll";
 import { Hamburger } from "./icons/common";
 import Image from "next/image";
-
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =useActiveSectionContext();
-
   const windowSize = useWindowSize();
   const { isScrolling } = useScroll();
-
   return (
     <AnimatePresence>
       {!isScrolling && (

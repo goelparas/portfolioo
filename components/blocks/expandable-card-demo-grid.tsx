@@ -4,6 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/lib/hooks/useOutsideClick";
 import { cn } from "@/lib/utils";
+import { FaCircleXmark } from "react-icons/fa6";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -45,7 +46,7 @@ export function ExpandableCardDemo() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid  place-items-center z-[100]">
+          <div className="fixed inset-0  grid  place-items-center z-[100] h-dvh">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -61,19 +62,19 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-1 z-50 right-0 lg:hidden items-center justify-center bg-black  rounded-full h-12 w-12"
               onClick={() => setActive(null)}
             >
-              <CloseIcon />
+              <FaCircleXmark size={40} stroke="#000" />
             </motion.button>
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-dvh md:h-fit md:max-h-[90%]  flex flex-col bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div
                 layoutId={`image-${active.title}-${id}`}
-                className="p-3"
+                className="p-3 h-2/5"
               >
                 <Image
                   priority
@@ -82,14 +83,13 @@ export function ExpandableCardDemo() {
                   src={active.src}
                   alt={active.title}
                   className={cn(
-                    "w-full h-80 lg:h-80 !rounded-3xl object-contain object-center",
+                    "w-full h-[180px] lg:h-80 !rounded-3xl object-contain object-center",
                     active.imageStyle
                   )}
                 />
               </motion.div>
-
-              <div className="h-full">
-                <div className="flex justify-between items-start p-4">
+              <div className="h-4/5">
+                <div className="flex justify-between items-start p-4 h-[20%]">
                   <div>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
@@ -117,13 +117,13 @@ export function ExpandableCardDemo() {
                     Link
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4 h-full">
+                <div className="relative px-4 h-[90%] scrollbar-hide overflow-y-scroll">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 overflow-scroll text-xs md:text-base lg:text-lg h-[500px]  pb-10 flex flex-col items-start gap-4   dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] "
+                    className="text-neutral-400   overflow-y-scroll pb-32 sm:p-0 h-full md:h-[450px] scrollbar-hide"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -143,7 +143,7 @@ export function ExpandableCardDemo() {
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between  w-full items-start sm:items-center min-w-fit hover:bg-neutral-700  rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row w-full sm:w-fit">
+            <div className="flex gap-4 flex-col md:flex-row w-full ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={150}
@@ -156,28 +156,29 @@ export function ExpandableCardDemo() {
                   )}
                 />
               </motion.div>
-              <div>
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-start md:text-left"
+              <div className="flex justify-between items-center rounded-xl p-1 sm:w-full">
+                <div>
+                  <motion.h3
+                    layoutId={`title-${card.title}-${id}`}
+                    className="font-medium text-neutral-800 dark:text-neutral-200 text-start md:text-left"
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${card.description}-${id}`}
+                    className="text-neutral-600 dark:text-neutral-400 text-start md:text-left"
+                  >
+                    {card.description}
+                  </motion.p>
+                </div>
+                <motion.button
+                  layoutId={`button-${card.title}-${id}`}
+                  className="py-3 px-2 text-sm    w-fit  sm:w-28 md:w-fit font-condensed  !rounded-[8px] sm:!rounded-xl font-semibold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0"
                 >
-                  {card.title}
-                </motion.h3>
-
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-start md:text-left"
-                >
-                  {card.description}
-                </motion.p>
+                  {card.ctaText}
+                </motion.button>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-3 py-2 text-lg sm:text-sm  w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0"
-            >
-              {card.ctaText}
-            </motion.button>
           </motion.div>
         ))}
       </ul>
@@ -201,12 +202,12 @@ export const CloseIcon = () => {
         },
       }}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="36"
+      height="36"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
+      fill="#000"
+      stroke="#000"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="h-4 w-4 text-black"
@@ -244,16 +245,6 @@ const cards = [
             system that creators could trust with their valuable content.
           </p>
           <p>
-            Throughout the development of TopSecret Links, I employed a range of
-            modern frontend technologies and methodologies to ensure that the
-            platform was both robust and user-friendly. Next.js, known for its
-            server-side rendering capabilities and seamless performance, was the
-            perfect framework for building a platform that could handle high
-            traffic and large volumes of content. By using Next.js, I was able
-            to optimize the platform for speed and scalability, ensuring that it
-            could support the growing number of users and uploads.
-          </p>
-          <p>
             The results speak for themselves. TopSecret Links has seen over
             20,000 uploads, with creators from various fields using the platform
             to share their work with a select audience. The platform's success
@@ -263,16 +254,7 @@ const cards = [
             and providing them with a secure, reliable space to share their
             work.
           </p>
-          <p>
-            One of the key challenges in developing TopSecret Links was
-            balancing security with user experience. Creators needed to feel
-            confident that their content was protected, but they also needed a
-            platform that was easy to use. To achieve this, I implemented robust
-            encryption and authentication mechanisms that safeguarded content
-            without compromising on usability. The user interface was designed
-            with simplicity and intuitiveness in mind, allowing creators to
-            easily navigate the platform and manage their content.
-          </p>
+          
           <p>
             In addition to focusing on security and user experience, I also
             placed a strong emphasis on scalability. As the platform grew in
@@ -289,7 +271,7 @@ const cards = [
     },
   },
   {
-    description: "Junior Frontend Developer",
+    description: "Junior Frontend Dev",
     title: "OpeninApp",
     imageStyle: "bg-white opacity-90",
     src: "https://raw.githubusercontent.com/goelparas/imFWEA/946b4a6de51a7816fe7f19d912d0a8e4dbcff5b8/openinap.svg",
@@ -328,15 +310,7 @@ const cards = [
             The tool's success is a testament to the importance of innovation in
             meeting the needs of modern content creators.
           </p>
-          <p>
-            My role in this project extended beyond just development; I also
-            collaborated closely with creators to understand their pain points
-            and iterated on the tool's features to ensure it provided maximum
-            value. This experience not only honed my technical skills but also
-            gave me a deeper understanding of the intersection between
-            technology and content creation, reinforcing my passion for building
-            tools that empower creators.
-          </p>
+         
         </p>
       );
     },
@@ -370,10 +344,7 @@ const cards = [
           reliability of over 200,000 patient records. This successful migration
           not only optimized the database performance but also laid a solid
           foundation for future scalability and data management within the
-          organization. The experience I gained from this project was
-          instrumental in shaping my approach to software development,
-          particularly in handling large-scale data operations and ensuring the
-          seamless integration of user-facing applications with backend systems.
+          organization.
         </p>
       );
     },

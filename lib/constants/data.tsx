@@ -111,7 +111,8 @@ export const INFORMATION = {
       github: "https://www.github.com/goelparas",
       twitter: "https://www.twitter.com/goelparas",
       linkedin: "https://www.linkedin.com/in/goelparas",
-      leetcode: "https://www.leetcode.com/goelparas",
+      resume: "https://drive.google.com/file/d/1xg4zweEuFEqkglemqVwjwc7iC6f0UfIv/view?usp=sharing",
+      
     },
   },
 };

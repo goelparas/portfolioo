@@ -27,9 +27,9 @@ const SOCIALS = [
     labelSm: "💼 LDN",
   },
   {
-    href: INFORMATION.CONTACT.SOCIALS.leetcode,
-    label: "👾 LEETCODE",
-    labelSm: "👾 LTC",
+    href: INFORMATION.CONTACT.SOCIALS.resume,
+    label: "📈 RESUME",
+    labelSm: "👾RSM",
   },
 ];
 

@@ -182,13 +182,13 @@ export default function MyProjects() {
 
         <GlassMorphedDrawer open={detailModal} onOpenChange={setDetailModal}>
           <motion.div
-            className="text-white flex flex-col justify-start items-start gap-2 overflow-y-scroll scrollbar-hide "
+            className="text-white flex relative h-dvh flex-col justify-start items-start gap-4 overflow-hidden scrollbar-hide "
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             <motion.div
-              className="text-3xl font-bold  mb-14"
+              className="text-3xl font-bold my-4"
               variants={childVariants}
             >
               <SectionHeading
@@ -201,30 +201,28 @@ export default function MyProjects() {
             <motion.img
               src={projects[selectedCard].imageUrl}
               alt="thumbnail"
-              className="rounded-2xl  w-[90%] h-4/5  overflow-x-hidden select-none"
+              className="rounded-2xl  w-full overflow-x-hidden select-none min-h-[180px] h-fit"
               draggable={false}
             />
 
             <motion.p
-              className="text-sm mb-2 text-justify rounded-xl text-white py-4 pr-4 font-markpro"
+              className="text-sm mb-2 text-justify rounded-xl text-white py-4  font-markpro h-4/5 overflow-y-scroll scrollbar-hide "
               variants={childVariants}
             >
               {projects[selectedCard].longDescription}
             </motion.p>
-            <motion.div
-              className="text-3xl font-bold flex justify-end w-full"
-              variants={childVariants}
-            >
+             
               <motion.button
                 role="link"
-                className="px-3 py-2 text-lg sm:text-sm  w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0"
+                variants={childVariants}
+                className="px-3 py-2  text-lg sm:text-sm mb-6 w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0"
                 onClick={() => {
                   window.open(projects[selectedCard].liveLink, "_blank");
                 }}
               >
                 View Live
               </motion.button>
-            </motion.div>
+             
           </motion.div>
         </GlassMorphedDrawer>
       </section>
@@ -251,7 +249,7 @@ const GlassMorphedDrawer = ({
       {width < ScreenSize.MOBILE ? (
         <Drawer open={open} onOpenChange={onOpenChange} direction="right">
           <DrawerContent
-            className="h-full w-full bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border-none   py-8 px-6 sm:px-[20%]"
+            className="h-full w-full bg-black rounded-md overflow-hidden bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border-none    px-6 sm:px-[20%]"
             showPill={false}
           >
             {props.children}
