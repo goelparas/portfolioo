@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import SectionHeading from "../section-heading";
-import  Heading from "../common/section-heading";
+import Heading from "../common/section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card-effect";
@@ -21,6 +21,7 @@ import {
   DialogDescription,
   DialogHeader,
 } from "../ui/dialog";
+import { useRouter } from "next/navigation";
 const TinderCard = dynamic(() => import("react-tinder-card"), { ssr: false });
 export default function MyProjects() {
   const { ref } = useSectionInView("Projects");
@@ -29,7 +30,7 @@ export default function MyProjects() {
   const [swipedCards, setSwipedCards] = React.useState(new Set());
   const [restore, setRestore] = React.useState(false);
   const [cards, setCards] = React.useState(projects);
-
+  const router = useRouter();
   const onSwipe = (direction: string, identifier: number) => {
     setSwipedCards((prev) => new Set(prev).add(identifier));
   };
@@ -86,7 +87,7 @@ export default function MyProjects() {
 
   return (
     <>
-      <Heading text="My Projects" ></Heading>
+      <Heading text="My Projects"></Heading>
       <section
         id="projects"
         ref={ref}
@@ -140,7 +141,6 @@ export default function MyProjects() {
                             alt="Image"
                             className="w-full h-full rounded-lg select-none"
                             draggable={false}
-
                           />
                         </div>
                         <img
@@ -193,7 +193,7 @@ export default function MyProjects() {
             >
               <SectionHeading
                 text={projects[selectedCard].title}
-            className="text-3xl"
+                className="text-3xl"
                 right={false}
               />
             </motion.div>
@@ -211,8 +211,17 @@ export default function MyProjects() {
             >
               {projects[selectedCard].longDescription}
             </motion.p>
-            <motion.div className="text-3xl font-bold flex justify-end w-full" variants={childVariants}>
-              <motion.button role="link" className="px-3 py-2 text-lg sm:text-sm  w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0">
+            <motion.div
+              className="text-3xl font-bold flex justify-end w-full"
+              variants={childVariants}
+            >
+              <motion.button
+                role="link"
+                className="px-3 py-2 text-lg sm:text-sm  w-full md:w-fit font-condensed !rounded-xl font-bold sm:font-semibold bg-white hover:bg-purple   text-black mt-4 md:mt-0"
+                onClick={() => {
+                  window.open(projects[selectedCard].liveLink, "_blank");
+                }}
+              >
                 View Live
               </motion.button>
             </motion.div>
@@ -250,7 +259,7 @@ const GlassMorphedDrawer = ({
         </Drawer>
       ) : (
         <Dialog open={open} onOpenChange={onOpenChange}>
-          <DialogClose className="outline-none"/>
+          <DialogClose className="outline-none" />
           <DialogContent className="border-none bg-transparent rounded-2xl bg-black  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
             <DialogHeader>
               <DialogDescription className="border-none">

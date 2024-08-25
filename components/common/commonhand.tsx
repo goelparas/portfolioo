@@ -12,8 +12,8 @@ const CommonHand = (props: Props) => {
   return (
     <Image
         src={"/left-hand.webp"}
-        width={width > ScreenSize.MOBILE ? 140 : 60}
-        height={width > ScreenSize.MOBILE ? 140 : 60}
+        width={width > ScreenSize.MOBILE ? 140 : 100}
+        height={width > ScreenSize.MOBILE ? 140 : 100}
         alt="asdf"
         className="absolute left-0 top-0 "
       />

@@ -29,7 +29,6 @@ export const words = [
 ];
 
 export default function Home() {
-  const { width } = useWindowSize();
 
   return (
     <main className='flex flex-col items-center px-4 overflow-x-hidden relative'>

@@ -29,7 +29,7 @@ export default function About() {
         <div />
         <CommonHand />
         <div className='flex flex-col w-full gap-6 justify-center items-start h-full mt-20'>
-          <h1 className='text-[3rem] tracking-tighter text-white font-bold text-left leading-[40px] font-markpro lg:hidden'>
+          <h1 className='text-[3rem] tracking-tighter text-white font-bold text-left leading-[42px] font-markpro lg:hidden'>
             turning idea into real life{' '}
             <span className='animate-gradient-text bg-gradient-to-r to-orange from-purple bg-clip-text text-transparent'>
               product{' '}
