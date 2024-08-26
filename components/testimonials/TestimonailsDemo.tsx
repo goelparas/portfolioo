@@ -40,12 +40,6 @@ const testimonials = [
     linkedIn: 'https://www.linkedin.com/in/armaanalam',
   },
   {
-    quote: '⚙️ Everything works flawlessly across devices. Truly impressive.',
-    username: '@piyush',
-    name: 'Piyush',
-    linkedIn: 'https://www.linkedin.com/in/piyush2818',
-  },
-  {
     quote: '🌟 The frontend is polished and user-friendly. A joy to navigate.',
     username: '@abhishek',
     name: 'Abhishek',
